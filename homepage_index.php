@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DWU Paramed Laboratory - Quality Healthcare Services</title>
+    <meta name="description" content="DWU Paramed Laboratory provides comprehensive laboratory services with state-of-the-art technology and experienced professionals.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <style>
+        :root {
+            --primary: #2c5282;
+            --primary-light: #4299e1;
+            --secondary: #38a169;
+            --accent: #d69e2e;
+            --white: #fff;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --gray: #718096;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a ion-icon {
+            margin-right: 5px;
+            font-size: 1.2rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 82, 130, 0.9), rgba(66, 153, 225, 0.9)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 0 10px;
+        }
+        
+        .btn:hover {
+            background-color: #b7791f;
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px var(--shadow);
+        }
+        
+        .service-icon {
+            background-color: var(--primary);
+            color: var(--white);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .service-icon ion-icon {
+            font-size: 2rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--shadow);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--primary-light);
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1rem;
+            color: var(--primary);
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 70px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/dwu_logo.png" alt="DWU Paramed Laboratory Logo">
+                <div class="logo-text">
+                    <h1>DWU Paramed Laboratory</h1>
+                    <p>Quality Healthcare Services</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="index.php"><ion-icon name="person-circle-outline"></ion-icon> Patient Portal</a></li>
+                    <li><a href="admin_login.php"><ion-icon name="shield-checkmark-outline"></ion-icon> Admin Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Excellence in Laboratory Services</h1>
+            <p>Providing accurate, timely, and reliable diagnostic services with state-of-the-art technology and experienced professionals.</p>
+            <a href="#services" class="btn">Our Services</a>
+            <a href="patient_login.php" class="btn btn-outline">Patient Portal</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Our Laboratory</h2>
+                <p>Committed to delivering high-quality diagnostic services to improve patient care.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Your Trusted Healthcare Partner</h3>
+                    <p>Established in 1995, DWU Paramed Laboratory has been at the forefront of diagnostic services in Papua New Guinea. We are committed to providing accurate, timely, and reliable laboratory results to healthcare providers and patients.</p>
+                    <p>Our state-of-the-art facility is equipped with the latest technology and staffed by a team of highly skilled professionals dedicated to excellence in laboratory medicine.</p>
+                    <p>We offer a comprehensive range of diagnostic tests and services, from routine blood work to specialized molecular testing, all performed with the highest standards of quality and precision.</p>
+                    <a href="#services" class="btn">Learn More About Our Services</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Laboratory">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>We offer a comprehensive range of laboratory services to meet your healthcare needs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <ion-icon name="water-outline"></ion-icon>
+                    </div>
+                    <h3>Clinical Chemistry</h3>
+                    <p>Comprehensive metabolic panels, lipid profiles, liver function tests, and specialized chemistry assays.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <ion-icon name="color-wand-outline"></ion-icon>
+                    </div>
+                    <h3>Hematology</h3>
+                    <p>Complete blood counts, coagulation studies, blood typing, and specialized hematology tests.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <ion-icon name="fitness-outline"></ion-icon>
+                    </div>
+                    <h3>Microbiology</h3>
+                    <p>Bacterial cultures, sensitivity testing, parasitology, mycology, and virology services.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <ion-icon name="flask-outline"></ion-icon>
+                    </div>
+                    <h3>Immunology & Serology</h3>
+                    <p>Autoimmune disease testing, allergy testing, infectious disease serology, and immunodeficiency testing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <ion-icon name="library-outline"></ion-icon>
+                    </div>
+                    <h3>Molecular Diagnostics</h3>
+                    <p>PCR testing, genetic testing, and advanced molecular techniques for precise diagnosis.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <ion-icon name="body-outline"></ion-icon>
+                    </div>
+                    <h3>Histopathology</h3>
+                    <p>Tissue examination, biopsy analysis, and specialized staining techniques for accurate diagnosis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from healthcare providers and patients who have experienced our services.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">DWU Paramed Laboratory has been our trusted partner for over a decade. Their accuracy and turnaround time are unmatched in the region.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. John">
+                        </div>
+                        <div class="author-info">
+                            <h4>Dr. John Kemo</h4>
+                            <p>Physician, Port Moresby General Hospital</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The staff at DWU Paramed Laboratory are professional and compassionate. They made my experience comfortable and stress-free.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Loko</h4>
+                            <p>Patient</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">As a specialist, I rely on accurate and timely laboratory results. DWU Paramed Laboratory consistently delivers on both fronts.</p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Dr. Michael">
+                        </div>
+                        <div class="author-info">
+                            <h4>Dr. Michael Steven</h4>
+                            <p>Cardiologist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Experience Quality Laboratory Services?</h2>
+            <p>Join thousands of healthcare providers and patients who trust DWU Paramed Laboratory for their diagnostic needs.</p>
+            <a href="index.php" class="btn">Patient Portal</a>
+            <a href="#services" class="btn btn-outline">Our Services</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>About Us</h3>
+                    <p>DWU Paramed Laboratory is committed to providing high-quality diagnostic services with state-of-the-art technology and experienced professionals.</p>
+                    <div class="social-links">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="index.php">Patient Portal</a></li>
+                        <li><a href="admin_login.php">Admin Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#services">Clinical Chemistry</a></li>
+                        <li><a href="#services">Hematology</a></li>
+                        <li><a href="#services">Microbiology</a></li>
+                        <li><a href="#services">Immunology & Serology</a></li>
+                        <li><a href="#services">Molecular Diagnostics</a></li>
+                        <li><a href="#services">Histopathology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><ion-icon name="location-outline"></ion-icon> Divine Word University, Madang, Papua New Guinea</p>
+                    <p><ion-icon name="call-outline"></ion-icon> +675 123 4567</p>
+                    <p><ion-icon name="mail-outline"></ion-icon> info@dwulab.edu.pg</p>
+                    <p><ion-icon name="time-outline"></ion-icon> Mon-Fri: 8am-5pm, Sat: 8am-12pm</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <?php echo date('Y'); ?> DWU Paramed Laboratory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

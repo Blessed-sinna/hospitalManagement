@@ -1,0 +1,82 @@
+<?php
+session_start();
+if (isset($_SESSION['email'])) {
+    header("Location: dashboard.php");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-container" id="login-form">
+            <h1>Login</h1>
+            <?php if(isset($_SESSION['error'])): ?>
+                <div class="error-message"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></div>
+            <?php endif; ?>
+            <form action="register.php" method="post">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" name="login" class="btn">Login</button>
+                <p class="switch-form">Don't have an account? <a href="#" id="show-signup">Sign Up</a></p>
+            </form>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="form-container" id="signup-form" style="display: none;">
+            <h1>Sign Up</h1>
+            <?php if(isset($_SESSION['error'])): ?>
+                <div class="error-message"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></div>
+            <?php endif; ?>
+            <form action="register.php" method="post">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="fName" placeholder="First Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="lName" placeholder="Last Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" name="signup" class="btn">Sign Up</button>
+                <p class="switch-form">Already have an account? <a href="#" id="show-login">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('show-signup').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+        });
+
+        document.getElementById('show-login').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
